@@ -3,11 +3,12 @@ import random
 import time
 from threading import *
 
+
 def producer(q):
     while True:
         print("Producing")
-        q.put(random.randint(1,50))
-        print("Produced")
+        q.put(random.randint(1, 50))
+        print("Produced", q)
         time.sleep(2)
 
 

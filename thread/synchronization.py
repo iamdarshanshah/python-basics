@@ -14,16 +14,16 @@ from time import sleep
 class BookMyBus:
     def __init__(self, availableSeats):
         self.availableSeats = availableSeats
-        self.l = Lock() # self.l = Semaphore()
+        self.l = Lock()  # self.l = Semaphore()
 
     def buy(self, seatsRequest):
         self.l.acquire()
         sleep(3)
-        if(seatsRequest <= self.availableSeats):
+        if seatsRequest <= self.availableSeats:
             print("Processing payment")
             print("Seat Confirmed")
             print("Printing ticket")
-            self.availableSeats-=seatsRequest
+            self.availableSeats -= seatsRequest
         else:
             print("Sorry resquested no. of seats not available")
         self.l.release()
