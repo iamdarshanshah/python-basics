@@ -1,10 +1,12 @@
 import mysql.connector  # Install mysql connector externally using pip3
 
+# Establish connection
 conn = mysql.connector.connect(host='localhost', database='mydb', user='root', password='test1234')
 
 if conn.is_connected():
     print("Connected to MySql DB")
 
+# Create cursor object from connection
 cursor = conn.cursor()
 
 cursor.execute("Select * from emp")
@@ -25,6 +27,4 @@ for row in rows:
 
 
 cursor.close()
-
-
 conn.close()

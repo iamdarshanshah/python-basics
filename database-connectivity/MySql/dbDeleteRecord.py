@@ -1,5 +1,6 @@
 import mysql.connector  # Install mysql connector externally using pip3
 
+
 def deleteRecordByID(id):
     conn = mysql.connector.connect(host='localhost', database='mydb', user='root', password='test1234')
     if conn.is_connected():
@@ -19,6 +20,7 @@ def deleteRecordByID(id):
     else:
         print("Connection failed")
     conn.close()
+
 
 empId = int(input('Enter EMP ID :: '))
 deleteRecordByID(empId)
