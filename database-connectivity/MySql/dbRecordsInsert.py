@@ -14,7 +14,5 @@ try:
 except:
     conn.rollback()
 
-
-
 cursor.close()
 conn.close()
